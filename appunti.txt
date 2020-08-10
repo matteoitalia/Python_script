@@ -1,0 +1,5 @@
+per accedere alla python shell bisogna scrivere nel cmd di atom/windows powershell il comando py(versione <3.8) altrimenti python e premere invio
+per lanciare uno scrip dal python shell puoi usare il comando "import < nomefile>". Questa è valido la prima volta dopo di che devi fare "import importlib" poi "importlib.reload(<nomefile>)"
+Su GitHub i collaboratori si aggiungono in settings > manage access
+Se devi cambiare account chiudi atom cerca gestione credenziali dal pannello di controllo > credenziali windows > generiche > (cancella tutto ad atom) al limite fai anche py config --unset user.name & user email
+Quando cambi il nome repository su GitHub non si cambia anche in offline
