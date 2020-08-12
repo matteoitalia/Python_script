@@ -1,0 +1,9 @@
+1. disegnare i confini geopolitici
+2. generare una griglia di punti
+3. assegnare alla griglia una mesh esagonale
+  la mesh viene generata usando un algoritmo
+    1. creare un quadrato centrato sul punto griglia in esame
+    2. allargare il quadrato finchè non ingloba dei punti della mappa
+    3. eseguire ray casting su ciascuno dei poligoni a cui questi punti appartengono
+    4. assegnare le proprietà in base al rango di precedenza delle zone geopolitiche
+    nota: per evitare di incorrere nell'errore punto-sul-lato, ripetere ray casting su 4 direzioni cartesiane
