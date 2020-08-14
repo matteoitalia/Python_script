@@ -3,6 +3,8 @@
 
 # Source: https://stackoverflow.com/a/3277516
 
+import matplotlib.pyplot as plt
+
 class npoint:
     x = 0
     y = 0
@@ -11,13 +13,6 @@ class npoint:
         self.y = y
 
 points = []
-
-
-NE = npoint(161.8627126814713,-111.01847351173663)
-SW = npoint(154.7247503248453,-119.42529248106277)
-
-searcharea = [NE,SW]
-# il primo elemento di searcharea è NE e il secondo è SW
 
 # estrai le coordinate della regione (di tutte le regioni) e immagazzinale in un array di oggetti npoint
 # searcharea = [npoint(x,y),npoint(x,y),...]
@@ -43,8 +38,31 @@ with open(filename) as f:
                 points.append(point)
             else:
                 points[i].x = float(number)
+                plt.plot(point.x,point.y,"bo")
                 i = i + 1
 
 #ora isoliamo tutti i punti che stanno all'interno del range...
-filtrati = [P for P in points if P.x > SW.x and P.x < NE.x and P.y > SW.y and P.y < NE.y]
-print(len(filtrati))
+
+center = npoint(157.42,-118)
+inc = 0.1
+
+plt.plot(center.x,center.y,"ro")
+filtrati = []
+i = 0
+while len(filtrati)<1:
+    NE = npoint(center.x+inc*i/2,center.y+inc*i/2)
+    SW = npoint(center.x-inc*i/2,center.y-inc*i/2)
+    filtrati = [P for P in points if P.x > SW.x and P.x < NE.x and P.y > SW.y and P.y < NE.y]
+    print(len(filtrati))
+    i = i + 1
+
+print(i)
+
+plt.plot([SW.x,SW.x],[SW.y,NE.y],"r--")
+plt.plot([SW.x,NE.x],[NE.y,NE.y],"r--")
+plt.plot([NE.x,NE.x],[NE.y,SW.y],"r--")
+plt.plot([NE.x,SW.x],[SW.y,SW.y],"r--")
+
+# il primo elemento di searcharea è NE e il secondo è SW
+plt.axes([0, 50, 0,50])
+plt.show()
