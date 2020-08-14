@@ -7,3 +7,7 @@
     3. eseguire ray casting su ciascuno dei poligoni a cui questi punti appartengono
     4. assegnare le proprietà in base al rango di precedenza delle zone geopolitiche
     nota: per evitare di incorrere nell'errore punto-sul-lato, ripetere ray casting su 4 direzioni cartesiane
+
+14 aug
+  abbiamo usato la libreria matplotlib per plottare in locale i punti mappa delle regioni
+  abbiamo usato la libreria shapely per implementare la soluzione al problema point-in-polygon, tuttavia questo genera dei"problemi" di integrazione tra i dati di input di shapely e le proprietà delle classi nostre. per questo bisognerà fare dei metodi che estraggono i dati in formato custom e li convertono in formato shapely
