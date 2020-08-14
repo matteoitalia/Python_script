@@ -3,3 +3,5 @@ per lanciare uno scrip dal python shell puoi usare il comando "import < nomefile
 Su GitHub i collaboratori si aggiungono in settings > manage access
 Se devi cambiare account chiudi atom cerca gestione credenziali dal pannello di controllo > credenziali windows > generiche > (cancella tutto ad atom) al limite fai anche py config --unset user.name & user email
 Quando cambi il nome repository su GitHub non si cambia anche in offline
+
+quando cambi branch su atom, ti conviene chiudere tutte le schede dei file su cui stavi lavorando
