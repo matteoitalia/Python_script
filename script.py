@@ -87,7 +87,7 @@ with open(filename) as f:
 
 #ora isoliamo tutti i punti che stanno all'interno del range...
 print(regions)
-center = npoint(148,-120)
+center = npoint(158,-126.89)
 inc = 10
 
 
@@ -126,11 +126,6 @@ for P in filtrati:
 
         print("x:",P.x,", y:",P.y,", entity:",P.entity_id,", region:",regions[P.entity_id-1].name,'\n')
         print(polygon.contains(point))
-
-
-
-
-
 
 plt.show()
 # il primo elemento di searcharea è NE e il secondo è SW
